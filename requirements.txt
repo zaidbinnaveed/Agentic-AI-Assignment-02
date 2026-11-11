@@ -1,0 +1,17 @@
+# Local environment (Python 3.12) for Q1, Q3, Q4, Q5 and all report builders.
+# Q2 runs on Google Colab; its notebook installs its own pinned GPU stack in the first cell.
+docx2pdf==0.1.8
+ipykernel==7.4.0
+jupyter==1.1.1
+matplotlib==3.11.2
+nbconvert==7.17.2
+nbformat==5.11.1
+nltk==3.10.4
+numpy==2.5.4
+openpyxl==3.1.5
+pandas==3.1.1
+python-docx==1.2.0
+python-dotenv==1.2.4
+requests==2.34.2
+rouge_score==0.1.2
+scikit-learn==1.9.1
