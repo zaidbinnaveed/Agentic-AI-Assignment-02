@@ -1,0 +1,20 @@
+model,side,endpoint,setting,P_in,P_out,P_cached,write_mult,min_prefix,ttl_min,caching_applied,reasoning_per_call,cost_no_cache,cost_cache,lower_bound,fits_B_no_cache,fits_B_cache
+GPT-6 Luna,closed,OpenAI API,non-reasoning (effort none),0.1,0.5,0.01,1.25,1024.0,30.0,True,0.0,301.39384,228.41392,False,True,True
+GPT-6.1 Terra,closed,OpenAI API,non-reasoning (effort none),1.0,5.0,0.05,1.25,1024.0,30.0,True,0.0,3013.9384,2243.5648,False,False,False
+GPT-6.1 Sol,closed,OpenAI API,"effort low; AA avg reasoning tokens per Intelligence-Index task, applied per call",2.0,10.0,0.1,1.25,1024.0,30.0,True,1585.0,14625.424,13084.6768,False,False,False
+Claude Haiku 5.5,closed,Anthropic API,thinking disabled (docs),0.1,0.5,0.01,1.25,512.0,5.0,True,0.0,301.39384,229.65592,False,True,True
+Claude Sonnet 5.5,closed,Anthropic API,thinking between_tools may still reason between tool calls; average not verified,2.0,10.0,0.1,1.25,512.0,5.0,True,,6027.8768,4513.0496,True,False,False
+Gemini 3.8 Flash,closed,Google Gemini API,thinking_level low; thinking cannot be disabled; average not verified,0.75,3.75,0.075,1.0,4096.0,,False,,2260.4538,2260.4538,True,False,False
+Gemini 3.5 Flash-Lite,closed,Google Gemini API,thinking_level minimal may still reason; average for this setting not verified,0.3,2.5,0.03,1.0,,,True,,1119.33272,903.14696,True,True,True
+Grok 4.3,closed,xAI API,reasoning effort none (docs),1.25,2.5,0.2,1.0,,,True,0.0,2960.606,2119.8836,False,False,False
+Grok 4.7,closed,xAI API,"effort low; AA avg reasoning tokens per Intelligence-Index task, applied per call",2.0,6.0,0.5,1.0,,,True,21674.0,75707.29900800002,74506.26700800001,False,False,False
+Qwen3.8-27B,open,Multiverse Computing,thinking disabled (non-reasoning variant),0.09,0.44,0.0171,1.0,,,True,0.0,269.102944,210.7327888,False,True,True
+GLM-5.3-Flash,open,Relace via OpenRouter,thinking cannot be disabled; low-effort average not verified,0.0399,0.0784,0.03,1.0,,,True,,94.20133184,86.27452064,True,True,True
+Qwen3-235B-A22B-Instruct-2507,open,DeepInfra,instruct model has no reasoning mode,0.09,0.55,,,,,False,0.0,292.769576,292.769576,False,True,True
+Llama 3.3 70B Instruct,open,DeepInfra Turbo FP8,non-reasoning model,0.1,0.32,,,,,False,0.0,262.666624,262.666624,False,True,True
+DeepSeek V4.1 Flash,open,Particle AI (flex) via OpenRouter,non-thinking mode on DeepSeek API; whether Particle honours it not verified,0.025,0.25,0.003,1.0,,,True,,102.24236,84.627224,True,True,True
+Kimi K3,open,Wafer via OpenRouter,thinking always on; low-effort average not verified,0.276,9.6,0.13,1.0,,,True,,2600.3898624000003,2483.4894144,True,False,False
+MiniMax-M3,open,DeepInfra Flex,thinking disabled (model card),0.224,0.88,0.0448,1.0,,,True,0.0,623.4859136,480.002624,False,True,True
+Mistral Medium 3.5,open,Mistral API,reasoning_effort none,1.5,7.5,0.15,1.0,64.0,,True,0.0,4520.9076,3439.9788,False,False,False
+gpt-oss-120b,open,NEAR AI via OpenRouter,effort low; mean 24 reasoning tokens (arXiv 2608.14161),0.03,0.15,0.015,1.0,,,True,24.0,92.37090719999999,80.36058719999998,False,True,True
+Gemma 4 31B,open,CoreWeave,thinking off (empty thought tags),0.1,0.34,0.1,1.0,,,False,0.0,266.969648,266.969648,False,True,True

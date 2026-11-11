@@ -1,0 +1,20 @@
+model,RPM_needed,RPM_limit,TPM_needed,TPM_limit,RPM_ok,TPM_ok,basis
+GPT-6 Luna,171.96666666666664,5000.0,682669.1666666665,2000000.0,True,True,OpenAI Build tier
+GPT-6.1 Terra,171.96666666666664,5000.0,682669.1666666665,1000000.0,True,True,OpenAI Build tier
+GPT-6.1 Sol,171.96666666666664,5000.0,955236.3333333333,1000000.0,True,True,OpenAI Build tier
+Claude Haiku 5.5,171.96666666666664,4000.0,356509.99999999994,2000000.0,True,True,"Anthropic Start tier: 4,000 RPM, 2M ITPM (uncached input only), 400k OTPM"
+Claude Sonnet 5.5,171.96666666666664,4000.0,356509.99999999994,2000000.0,True,True,"Anthropic Start tier: 4,000 RPM, 2M ITPM (uncached input only), 400k OTPM"
+Gemini 3.8 Flash,171.96666666666664,,682669.1666666665,,,,Tier 1 RPM/TPM shown only in AI Studio console (not verified)
+Gemini 3.5 Flash-Lite,171.96666666666664,,682669.1666666665,,,,Tier 1 RPM/TPM shown only in AI Studio console (not verified)
+Grok 4.3,171.96666666666664,2220.0,682669.1666666665,10000000.0,True,True,"xAI Tier 0: 37 requests/second, 10M TPM"
+Grok 4.7,171.96666666666664,9000.0,4409874.699999999,50000000.0,True,True,"xAI Tier 0: 150 requests/second, 50M TPM"
+Qwen3.8-27B,171.96666666666664,,682669.1666666665,,,,not published
+GLM-5.3-Flash,171.96666666666664,,682669.1666666665,,,,not published
+Qwen3-235B-A22B-Instruct-2507,171.96666666666664,,682669.1666666665,,,,"DeepInfra: 200 concurrent requests per model, no RPM/TPM cap"
+Llama 3.3 70B Instruct,171.96666666666664,,682669.1666666665,,,,"DeepInfra: 200 concurrent requests per model, no RPM/TPM cap"
+DeepSeek V4.1 Flash,171.96666666666664,,682669.1666666665,,,,not published
+Kimi K3,171.96666666666664,,682669.1666666665,,,,not published
+MiniMax-M3,171.96666666666664,,682669.1666666665,,,,"DeepInfra: 200 concurrent requests per model, no RPM/TPM cap"
+Mistral Medium 3.5,171.96666666666664,,682669.1666666665,,,,limits only in logged-in console
+gpt-oss-120b,171.96666666666664,,686796.3666666666,,,,not published
+Gemma 4 31B,171.96666666666664,,682669.1666666665,,,,not published
