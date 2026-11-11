@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+
+# Secrets
+.env
+
+# Model artefacts
+checkpoints/
+outputs/
+adapters/
+*.safetensors
+*.bin
+*.pt
+wandb/
+
+# Office lock files
+~$*
+
+# Local tooling
+.claude/
+CLAUDE.md
