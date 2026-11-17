@@ -1,9 +1,9 @@
 # What you still need to run or supply
 
 ## Q1 – SaafHawa
-1. **OpenAQ API key.** Create a free key at https://explore.openaq.org/register, copy `.env.example` to `.env` and set `OPENAQ_API_KEY=...`. The first run (11 Nov 2026) had no key, so its 25 `air_quality` rows are logged as errors.
-2. **Timing runs on two different days.** Done for weather, heat index and KB lookup: runs on 11 Nov and 17 Nov 2026 (25 calls each, 50 OK per tool). Still needed for **air quality**: once the key is set, run `python tool_latency.py --n 25` on two different days (e.g. today and tomorrow). The PDF requires ≥ 20 calls per API spread over ≥ 2 days. Every run appends to `timing_log.csv`; the error rows from the keyless runs are kept as an honest record.
-3. **Re-run Q1** after step 2: execute `q1_calculations.ipynb`, then `python build_spreadsheet.py` and `python build_report.py`. The red placeholder in Section 2.6 of the report (now only about the missing OpenAQ data) disappears once the log is complete.
+1. ~~**OpenAQ API key.**~~ Done: the key is in `.env` (git-ignored). The first OpenAQ run on 17 Nov 2026 got 25/25 OK, median 679 ms (station 5188633, Lyari).
+2. **One more timing run on another day (air quality only).** Weather, heat index and KB already have ≥ 20 OK calls over 2 days (11 and 17 Nov). Air quality has 25 OK calls on 17 Nov only. On **any later day**, run `python tool_latency.py --n 25` from `Q1_SaafHawa/`. Every run appends to `timing_log.csv`; error rows from the keyless runs are kept as an honest record.
+3. **Re-run Q1** after step 2: `jupyter nbconvert --to notebook --execute --inplace q1_calculations.ipynb`, then `python build_spreadsheet.py` and `python build_report.py`. The red placeholder in Section 2.6 disappears once air quality has 2 days.
 4. **config.json screenshot.** Open https://huggingface.co/unsloth/Llama-3.3-70B-Instruct/blob/main/config.json (or the gated meta-llama page if you have access) and screenshot it, showing `num_hidden_layers`, `num_key_value_heads` and `head_dim`. Replace the rendered image and the red placeholder in Section 2.4 of the Q1 document.
 5. **Review `ai_declaration.md`** and edit it so it matches how you actually used AI tools.
 6. Optional: open `q1_calculations.xlsx` in Excel. All formulas recalculate on open.

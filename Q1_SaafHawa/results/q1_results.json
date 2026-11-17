@@ -640,44 +640,59 @@
     "kv_budget_gb": 36.723146752,
     "per_gpu": 19,
     "decode_bound_tps": 57.799939968160274,
-    "session_s": 23.69302955937492,
+    "session_s": 24.59473254987492,
     "lam": 0.5347222222222222,
-    "concurrent": 12.669189417165756,
+    "concurrent": 13.15135004403034,
     "gpus": 1,
     "monthly": 1288.8
   },
   "tools": {
     "per_tool": [
       {
+        "tool": "air_quality",
+        "count": 25,
+        "median": 679.2077,
+        "mean": 590.19512,
+        "min": 280.3902,
+        "max": 1088.0056,
+        "days": 1
+      },
+      {
         "tool": "heat_index",
-        "count": 50,
-        "median": 0.00345,
-        "mean": 0.003812,
+        "count": 100,
+        "median": 0.0038,
+        "mean": 0.004377,
         "min": 0.0017,
-        "max": 0.0128
+        "max": 0.0188,
+        "days": 2
       },
       {
         "tool": "kb_lookup",
-        "count": 50,
-        "median": 0.03005,
-        "mean": 0.041184000000000005,
+        "count": 100,
+        "median": 0.049350000000000005,
+        "mean": 0.058128,
         "min": 0.0189,
-        "max": 0.3247
+        "max": 0.5773,
+        "days": 2
       },
       {
         "tool": "weather",
-        "count": 50,
-        "median": 140.0264,
-        "mean": 833.948428,
+        "count": 100,
+        "median": 148.1098,
+        "mean": 551.88525,
         "min": 128.6525,
-        "max": 21514.111
+        "max": 21514.111,
+        "days": 2
       }
     ],
-    "median_ms": 0.03005,
+    "median_ms": 206.84266250000002,
     "days": 2,
-    "n_ok": 150,
-    "n_err": 50,
-    "complete": false
+    "n_ok": 325,
+    "n_err": 75,
+    "complete": false,
+    "missing": [
+      "air_quality"
+    ]
   },
   "latency": {
     "Claude Haiku 5.5": {
@@ -697,9 +712,9 @@
         8.219787068139405,
         9.684025450143743
       ],
-      "tools": 0.00012020000000000001,
-      "retries": 2.781246162530185,
-      "total": 43.368006751898214,
+      "tools": 0.8273706500000001,
+      "retries": 2.8556987030301855,
+      "total": 44.26970974239821,
       "meets_T": false,
       "tps": 220.3,
       "source": "https://artificialanalysis.ai/models/claude-haiku-5-5-low",
@@ -710,8 +725,8 @@
         3.2130442869796276,
         9.684025450143743
       ],
-      "routed_retries": 1.1567067613126658,
-      "routed_total": 23.69302955937492,
+      "routed_retries": 1.2311593018126659,
+      "routed_total": 24.59473254987492,
       "routed_meets_T": false,
       "routed_cost": 218.5330088,
       "routed_cost_parts": {
@@ -736,9 +751,9 @@
         9.498157328899971,
         15.747860182876142
       ],
-      "tools": 0.00012020000000000001,
-      "retries": 3.4110914564039896,
-      "total": 57.059967821546685,
+      "tools": 0.8273706500000001,
+      "retries": 3.48554399690399,
+      "total": 57.96167081204669,
       "meets_T": false,
       "tps": 40.1,
       "source": "https://artificialanalysis.ai/models/minimax-m3/providers (DeepInfra)",
@@ -749,8 +764,8 @@
         3.2130442869796276,
         15.747860182876142
       ],
-      "routed_retries": 1.1567067613126658,
-      "routed_total": 29.75686429210732,
+      "routed_retries": 1.2311593018126659,
+      "routed_total": 30.65856728260732,
       "routed_meets_T": false,
       "routed_cost": 294.1518408,
       "routed_cost_parts": {
@@ -787,9 +802,9 @@
     "selfhost_at_Q": 1288.8,
     "Q_star": null,
     "Q_star_if_T": null,
-    "queries_per_gpu": 3299.3428879802113,
+    "queries_per_gpu": 3178.3809160318,
     "api_per_daily_query": 0.09933318581818182,
-    "gpu_per_daily_query": 0.39062323734074705,
+    "gpu_per_daily_query": 0.4054894721709641,
     "grid_max": 60000
   }
 }

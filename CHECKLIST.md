@@ -29,7 +29,7 @@ Abbreviations: Q1 doc = `Q1_SaafHawa/Assignment_Beta_Question_no_1_23K-0028.docx
 | Weights at FP16/8/4-bit, KV per sequence at the longest context, max sequences on a real GPU (10% reserved), GPUs needed | Q1 doc 2.4; nb 2.4; xlsx `Self_hosting` | ✅ |
 | 2.5 Break-even with a real GPU price, step function, Q*, plot, realism | Q1 doc 2.5 + `results/breakeven.png`; nb 2.5; xlsx `Break_even` | ✅ (result: no Q* exists; explained) |
 | 2.6 Latency for 2 candidates, with retries and measured tool delay; architectural change | Q1 doc 2.6; nb 2.6; xlsx `Latency` | ✅ |
-| Tool latency: AQ and weather APIs ≥ 20 calls each over ≥ 2 days, heat-index and KB timed, raw log | `tool_latency.py`, `timing_log.csv` | ⏳ weather/heat index/KB done (50 OK each, 11 + 17 Nov); OpenAQ key and its two runs still needed (TODO 1–3) |
+| Tool latency: AQ and weather APIs ≥ 20 calls each over ≥ 2 days, heat-index and KB timed, raw log | `tool_latency.py`, `timing_log.csv` | ⏳ weather/heat index/KB ≥ 50 OK each over 11 + 17 Nov; air quality 25 OK on 17 Nov, needs one more day (TODO 2–3) |
 | Recommendation to the technical lead (incl. Urdu/Roman Urdu, municipal summary) | Q1 doc, final section | ✅ |
 | Spreadsheet or notebook with the calculations | `q1_calculations.ipynb` and `q1_calculations.xlsx` | ✅ |
 | AI-use declaration | `Q1_SaafHawa/ai_declaration.md` | ⏳ review and edit (TODO 5) |

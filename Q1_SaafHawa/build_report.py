@@ -209,24 +209,25 @@ para(doc, f"L = {SH['session_s']:.2f} s is the end-to-end latency of the faster 
 
 doc.add_heading("2.6 Latency budget (needed for 2.4 and 2.5)", level=2)
 tl = pd.DataFrame(TOOLS["per_tool"])
-table(doc, ["Tool", "n OK", "median ms", "mean ms", "min ms", "max ms"],
-      [[r.tool, int(r["count"]), f"{r['median']:.4f}", f"{r['mean']:.4f}", f"{r['min']:.4f}", f"{r['max']:.4f}"] for _, r in tl.iterrows()],
+table(doc, ["Tool", "n OK", "days", "median ms", "mean ms", "min ms", "max ms"],
+      [[r.tool, int(r["count"]), int(r["days"]), f"{r['median']:.4f}", f"{r['mean']:.4f}", f"{r['min']:.4f}", f"{r['max']:.4f}"]
+       for _, r in tl.iterrows()],
       font_pt=8)
-math(doc, f"Pooled median of all {TOOLS['n_ok']} successful measurements: t = {TOOLS['median_ms']:.4f} ms per tool call")
+math(doc, f"Tool delay t = mean of the {len(tl)} per-tool medians = {TOOLS['median_ms']:.1f} ms per tool call "
+          f"({TOOLS['n_ok']} successful measurements over {TOOLS['days']} days)")
 if not TOOLS["complete"]:
-    missing = []
-    if "air_quality" not in set(tl["tool"]):
-        missing.append("OpenAQ (air_quality) calls need an API key and have no successful measurement yet")
-    if TOOLS["days"] < 2:
-        missing.append("a second day's run is required")
-    placeholder(doc, f"timing log incomplete: {'; '.join(missing) or 'see TODO_FOR_STUDENT.md'}. The current log has "
-                     f"{TOOLS['n_ok']} OK measurements from {TOOLS['days']} day(s). Re-run tool_latency.py, the notebook and this "
-                     "builder (TODO_FOR_STUDENT.md)")
-api_medians = tl[tl["tool"].isin(["weather", "air_quality"])]["median"]
-slowest_api = float(api_medians.max()) if len(api_medians) else float("nan")
-para(doc, "Because heat-index and KB lookups take microseconds, the pooled median sits between the local tools and the API calls. Even "
-          f"the slowest API median (~{slowest_api:.0f} ms) x 4 tool calls is {4 * slowest_api / 1000:.2f} s, so tool delay is small next "
-          "to LLM time.", size=9)
+    placeholder(doc, f"timing log incomplete: each API needs >=20 OK calls over >=2 days; still short: "
+                     f"{', '.join(TOOLS.get('missing', [])) or 'see TODO_FOR_STUDENT.md'}. Run tool_latency.py on another day, "
+                     "then re-run the notebook and this builder (TODO_FOR_STUDENT.md)")
+api = tl[tl["tool"].isin(["weather", "air_quality"])].set_index("tool")["median"]
+slowest_api = float(api.max()) if len(api) else float("nan")
+para(doc, "Each tool is weighted equally. A pooled median over all rows would just return a local-tool value, because the heat-index "
+          "and KB rows outnumber the API rows, and it would hide the network calls. The local tools take microseconds, so the delay "
+          f"comes from the two APIs: OpenAQ (median {api.get('air_quality', float('nan')):.0f} ms) and Open-Meteo "
+          f"(median {api.get('weather', float('nan')):.0f} ms). Even if all 4 tool calls cost as much as the slowest API median, the "
+          f"total would be {4 * slowest_api / 1000:.2f} s, which is small next to the LLM time below. Weather has one 21.5 s outlier "
+          "(17 Nov, 13:54 UTC), and the first call of every run is slower (~1.4-1.8 s, a cold HTTPS connection). These outliers "
+          "pull the weather mean far above its median, which is why medians are used.", size=9)
 math(doc, "Per call:  l_k = TTFT(I_k) + O_k / tps,   TTFT(I) = a + b I  (fit through AA's measured TTFT at 1k and 10k input tokens)")
 math(doc, "Per query: L = sum_k l_k + (N-1) t + p sum_(k<N) (l_k + t)")
 para(doc, "Candidates. Rule: within B with caching, cost not a lower bound, verified TTFT and throughput, tool calling and JSON "

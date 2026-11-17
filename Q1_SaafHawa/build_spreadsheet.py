@@ -150,7 +150,7 @@ for cand, v in RES["latency"].items():
         row += 1
 tool_row = row + 1
 block(ws, [
-    ("Pooled median tool delay t (s)", RES["tools"]["median_ms"] / 1000, "from timing_log.csv"),
+    ("Tool delay t = mean of per-tool medians (s)", RES["tools"]["median_ms"] / 1000, "from timing_log.csv"),
     (f"L {list(RES['latency'])[0]}", f"=SUM(I2:I6)+(N_-1)*B{tool_row}+p_*(SUM(I2:I5)+4*B{tool_row})", "sum + tools + retries"),
     (f"L {list(RES['latency'])[1]}", f"=SUM(I7:I11)+(N_-1)*B{tool_row}+p_*(SUM(I7:I10)+4*B{tool_row})", ""),
 ], start=tool_row)
