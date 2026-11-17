@@ -640,9 +640,9 @@
     "kv_budget_gb": 36.723146752,
     "per_gpu": 19,
     "decode_bound_tps": 57.799939968160274,
-    "session_s": 23.69303936937492,
+    "session_s": 23.69302955937492,
     "lam": 0.5347222222222222,
-    "concurrent": 12.669194662790755,
+    "concurrent": 12.669189417165756,
     "gpus": 1,
     "monthly": 1288.8
   },
@@ -650,33 +650,33 @@
     "per_tool": [
       {
         "tool": "heat_index",
-        "count": 25,
-        "median": 0.0044,
-        "mean": 0.004972000000000001,
-        "min": 0.003,
+        "count": 50,
+        "median": 0.00345,
+        "mean": 0.003812,
+        "min": 0.0017,
         "max": 0.0128
       },
       {
         "tool": "kb_lookup",
-        "count": 25,
-        "median": 0.0323,
-        "mean": 0.039476,
+        "count": 50,
+        "median": 0.03005,
+        "mean": 0.041184000000000005,
         "min": 0.0189,
-        "max": 0.2185
+        "max": 0.3247
       },
       {
         "tool": "weather",
-        "count": 25,
-        "median": 133.1913,
-        "mean": 192.13738,
+        "count": 50,
+        "median": 140.0264,
+        "mean": 833.948428,
         "min": 128.6525,
-        "max": 1483.714
+        "max": 21514.111
       }
     ],
-    "median_ms": 0.0323,
-    "days": 1,
-    "n_ok": 75,
-    "n_err": 25,
+    "median_ms": 0.03005,
+    "days": 2,
+    "n_ok": 150,
+    "n_err": 50,
     "complete": false
   },
   "latency": {
@@ -697,9 +697,9 @@
         8.219787068139405,
         9.684025450143743
       ],
-      "tools": 0.0001292,
-      "retries": 2.781246972530186,
-      "total": 43.368016561898216,
+      "tools": 0.00012020000000000001,
+      "retries": 2.781246162530185,
+      "total": 43.368006751898214,
       "meets_T": false,
       "tps": 220.3,
       "source": "https://artificialanalysis.ai/models/claude-haiku-5-5-low",
@@ -710,8 +710,8 @@
         3.2130442869796276,
         9.684025450143743
       ],
-      "routed_retries": 1.156707571312666,
-      "routed_total": 23.69303936937492,
+      "routed_retries": 1.1567067613126658,
+      "routed_total": 23.69302955937492,
       "routed_meets_T": false,
       "routed_cost": 218.5330088,
       "routed_cost_parts": {
@@ -736,9 +736,9 @@
         9.498157328899971,
         15.747860182876142
       ],
-      "tools": 0.0001292,
-      "retries": 3.41109226640399,
-      "total": 57.059977631546694,
+      "tools": 0.00012020000000000001,
+      "retries": 3.4110914564039896,
+      "total": 57.059967821546685,
       "meets_T": false,
       "tps": 40.1,
       "source": "https://artificialanalysis.ai/models/minimax-m3/providers (DeepInfra)",
@@ -749,8 +749,8 @@
         3.2130442869796276,
         15.747860182876142
       ],
-      "routed_retries": 1.156707571312666,
-      "routed_total": 29.756874102107318,
+      "routed_retries": 1.1567067613126658,
+      "routed_total": 29.75686429210732,
       "routed_meets_T": false,
       "routed_cost": 294.1518408,
       "routed_cost_parts": {
@@ -787,9 +787,9 @@
     "selfhost_at_Q": 1288.8,
     "Q_star": null,
     "Q_star_if_T": null,
-    "queries_per_gpu": 3299.3415219016256,
+    "queries_per_gpu": 3299.3428879802113,
     "api_per_daily_query": 0.09933318581818182,
-    "gpu_per_daily_query": 0.39062339907666804,
+    "gpu_per_daily_query": 0.39062323734074705,
     "grid_max": 60000
   }
 }

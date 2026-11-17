@@ -6,7 +6,7 @@ HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))
 from common.docx_utils import bullet, new_document, para, rich, save_with_pdf, table  # noqa: E402
 
-doc = new_document("Paper Summary - Question 5", margins_cm=1.8, base_pt=10.5)
+doc = new_document("Paper Summary - Question 5", margins_cm=1.5, base_pt=10.5)
 rich(doc, [("Paper: ", "b"),
            ("P. Ersoy and M. Ersahin, \"A Comparative Evaluation of RAG Architectures for Cross-Domain LLM Applications: Design, "
             "Implementation, and Assessment,\" IEEE Access, vol. 13, pp. 194185-194196, 2025. DOI: 10.1109/ACCESS.2025.3632404. "
